@@ -1,0 +1,3 @@
+In SQL, a common yet often subtle error involves incorrect handling of NULL values.  Consider a query with a WHERE clause comparing a column to a specific value, such as `WHERE column_name = 'some_value'`. If `column_name` contains NULL values, this condition will always evaluate to false because NULL is not equal to anything, even another NULL. This leads to the omission of rows with NULL values in `column_name`, even when you intend to include them.
+
+Another related issue arises when using aggregate functions like AVG(), SUM(), COUNT(), etc. Aggregate functions frequently ignore NULL values. This can be problematic if your dataset has numerous NULLs, leading to inaccurate or misleading results.
